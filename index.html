@@ -1,76 +1,49 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlaVlaDelivery</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f7f7f7;
-        }
-
-        .header {
-            background: #0080ff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-        .card {
-            background: white;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background: #0080ff;
-            color: white;
-            text-align: center;
-            font-size: 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .input-box {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BlaVlaDelivery</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <header class="topbar">
+    <h1>BlaVlaDelivery</h1>
+    <nav>
+      <button onclick="location.href='index.html'">Home</button>
+      <button onclick="location.href='add-parcel.html'">Send Parcel</button>
+      <button onclick="location.href='drivers-list.html'">Find Drivers</button>
+      <button onclick="location.href='user-kyc.html'">KYC</button>
+      <button onclick="location.href='parcel-tracking.html'">Track</button>
+      <button onclick="location.href='chat.html'">Chat</button>
+      <button onclick="location.href='admin.html'">Admin</button>
+    </nav>
+  </header>
 
-    <div class="header">BlaVlaDelivery</div>
-
-    <div class="card">
-        <h2>Send a Parcel</h2>
-        <input class="input-box" placeholder="Pickup Location" />
-        <input class="input-box" placeholder="Drop Location" />
-        <input class="input-box" placeholder="Parcel Weight (kg)" />
-        <a class="button" href="#">Search Drivers</a>
-    </div>
-
-    <div class="card">
-        <h2>Become a Driver</h2>
+  <main class="container">
+    <section class="card">
+      <h2>Send a Parcel</h2>
+      <div class="form">
+        <input id="from" placeholder="From (city)"/>
+        <input id="to" placeholder="To (city)"/>
+        <input id="weight" placeholder="Weight (kg)"/>
+        <button id="search-drivers">Search Drivers</button>
+      </div>
+      <div class="card small">
+        <h3>Become a Driver</h3>
         <p>Earn money by delivering parcels on your route.</p>
-        <a class="button" href="#">Start Driver KYC</a>
-    </div>
+        <button onclick="location.href='driver-kyc.html'">Start Driver KYC</button>
+      </div>
+    </section>
+    <section class="card">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="agreement.html">Agreement (Hindi/English)</a></li>
+      </ul>
+    </section>
+  </main>
 
+  <footer class="footer">© BlaVlaDelivery</footer>
+  <script type="module" src="main.js"></script>
 </body>
 </html>
