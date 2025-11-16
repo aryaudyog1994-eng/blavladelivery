@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Add Parcel - BlaVlaDelivery</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        h2 { text-align: center; }
+        .box { background: white; padding: 20px; border-radius: 10px; }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #bbb;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #007bff;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Add Parcel Details</h2>
+    
+    <div class="box">
+        <input type="text" id="from" placeholder="Pickup City">
+        <input type="text" id="to" placeholder="Drop City">
+        <input type="text" id="weight" placeholder="Parcel Weight (kg)">
+        <input type="text" id="size" placeholder="Size (L*W*H)">
+        <input type="text" id="person" placeholder="Person Details (Optional)">
+        
+        <button onclick="submitParcel()">Submit Parcel</button>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+        import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAVKm5n5o8KDxQ7mlvxfTsJdLRiTt-dKss",
+            authDomain: "blavladelivery-c4175.firebaseapp.com",
+            projectId: "blavladelivery-c4175",
+            storageBucket: "blavladelivery-c4175.firebasestorage.app",
+            messagingSenderId: "1092623155522",
+            appId: "1:1092623155522:web:b5f26905a40c505c2248db",
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function submitParcel() {
+            let from = document.getElementById("from").value;
+            let to = document.getElementById("to").value;
+            let weight = document.getElementById("weight").value;
+            let size = document.getElementById("size").value;
+            let person = document.getElementById("person").value;
+
+            await addDoc(collection(db, "parcels"), {
+                from, to, weight, size, person,
+                time: new Date().toISOString()
+            });
+
+            alert("Parcel Added Successfully!");
+        }
+    </script>
+
+</body>
+</html>
