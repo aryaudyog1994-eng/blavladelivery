@@ -1,11 +1,76 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Website</title>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlaVlaDelivery</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+        }
+
+        .header {
+            background: #0080ff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #0080ff;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
+
 <body>
-<h1>Website Running!</h1>
-<p>This is your simple website.</p>
+
+    <div class="header">BlaVlaDelivery</div>
+
+    <div class="card">
+        <h2>Send a Parcel</h2>
+        <input class="input-box" placeholder="Pickup Location" />
+        <input class="input-box" placeholder="Drop Location" />
+        <input class="input-box" placeholder="Parcel Weight (kg)" />
+        <a class="button" href="#">Search Drivers</a>
+    </div>
+
+    <div class="card">
+        <h2>Become a Driver</h2>
+        <p>Earn money by delivering parcels on your route.</p>
+        <a class="button" href="#">Start Driver KYC</a>
+    </div>
+
 </body>
 </html>
