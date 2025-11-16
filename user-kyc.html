@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>User KYC - BlaVlaDelivery</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+  <main class="container small">
+    <section class="card">
+      <h2>User KYC</h2>
+      <form id="userKycForm">
+        <div class="input-group"><label>Full name</label><input id="u_name" type="text" required></div>
+        <div class="input-group"><label>Phone</label><input id="u_phone" type="tel" required></div>
+        <div class="input-group"><label>Aadhaar front</label><input id="u_aadhaar_front" type="file" accept="image/*" required></div>
+        <div class="input-group"><label>Aadhaar back</label><input id="u_aadhaar_back" type="file" accept="image/*" required></div>
+        <div class="input-group"><label>RC front</label><input id="u_rc_front" type="file" accept="image/*" required></div>
+        <div class="input-group"><label>RC back</label><input id="u_rc_back" type="file" accept="image/*" required></div>
+        <div class="input-group"><label>Selfie</label><input id="u_selfie" type="file" accept="image/*" required></div>
+        <button type="submit" class="btn">Submit KYC</button>
+      </form>
+      <div id="ukycResult" class="muted"></div>
+    </section>
+  </main>
+  <script type="module">
+    import { /* firebasePlaceholder */ } from './assets/main.js';
+    document.getElementById('userKycForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      // Demo: simply validate files present
+      const name = document.getElementById('u_name').value.trim();
+      const phone = document.getElementById('u_phone').value.trim();
+      const files = [
+        document.getElementById('u_aadhaar_front').files[0],
+        document.getElementById('u_aadhaar_back').files[0],
+        document.getElementById('u_rc_front').files[0],
+        document.getElementById('u_rc_back').files[0],
+        document.getElementById('u_selfie').files[0]
+      ];
+      if(!name || !phone || files.some(f=>!f)){ alert('Please fill all fields and upload files.'); return; }
+      document.getElementById('ukycResult').textContent = 'KYC submitted (demo). Follow README to integrate Firebase Storage.';
+    });
+  </script>
+</body></html>

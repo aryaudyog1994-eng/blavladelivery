@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>BlaVlaDelivery</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🚚 BlaVlaDelivery</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="user-kyc.html">User KYC</a>
+      <a href="driver-kyc.html">Driver KYC</a>
+    </nav>
+  </header>
+
+  <main class="container page">
+    <section class="card">
+      <h1>Fast & Safe Parcel Delivery</h1>
+      <p class="muted">Create parcel requests, find nearby drivers, and track delivery — mobile-first UI.</p>
+      <div class="grid">
+        <a class="btn" href="add-parcel.html">Add Parcel</a>
+        <a class="btn outline" href="parcel-tracking.html">Track Parcel</a>
+        <a class="btn outline" href="chat.html">Chat</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Map & Nearby Drivers</h2>
+      <div id="homeMap" class="map-placeholder">Loading map...</div>
+      <div class="muted">Map placeholder. Add Google Maps or Mapbox + user's location.</div>
+    </section>
+
+    <section class="card small">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="user-kyc.html">User KYC</a></li>
+        <li><a href="driver-kyc.html">Driver KYC</a></li>
+        <li><a href="agreement.html">Agreement</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">© 2025 BlaVlaDelivery</footer>
+  <script type="module">
+    import { initMapPlaceholder } from './assets/main.js';
+    initMapPlaceholder('homeMap');
+  </script>
+</body>
+</html>

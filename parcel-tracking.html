@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Track Parcel - BlaVlaDelivery</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+  <main class="container small">
+    <section class="card">
+      <h2>Track Parcel</h2>
+      <form id="trackForm">
+        <div class="input-group"><label>Tracking ID</label><input id="trackId" type="text" required></div>
+        <button type="submit" class="btn">Track</button>
+      </form>
+      <div id="trackResult" class="muted"></div>
+    </section>
+  </main>
+  <script type="module">
+    import { demoTrackingStatus } from './assets/main.js';
+    document.getElementById('trackForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const id = document.getElementById('trackId').value.trim();
+      if(!id){ alert('Enter tracking ID'); return; }
+      const st = demoTrackingStatus(id);
+      document.getElementById('trackResult').textContent = 'Status: ' + st.status + ' (updated: ' + new Date(st.updated).toLocaleString() + ')';
+    });
+  </script>
+</body></html>

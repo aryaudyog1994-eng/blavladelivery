@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Login - BlaVlaDelivery</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+  <main class="container small">
+    <section class="card">
+      <h2>Sign in</h2>
+      <form id="loginForm">
+        <div class="input-group"><label>Mobile number</label><input id="loginPhone" type="tel" placeholder="+91 98765 43210" required></div>
+        <button type="submit" class="btn">Send OTP (demo)</button>
+      </form>
+      <div id="loginResult" class="muted"></div>
+    </section>
+  </main>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const ph = document.getElementById('loginPhone').value.trim();
+      if(!ph){ alert('Enter phone'); return; }
+      document.getElementById('loginResult').textContent = 'OTP sent (demo). Integrate Firebase Auth for real OTP.';
+    });
+  </script>
+</body></html>
