@@ -1,0 +1,7 @@
+
+<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Login - BlaVlaDelivery</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+  <header class="topbar"><div class="brand"><img src="assets/images/logo_grey.jpg" alt="logo" style="height:26px"><span>BlaVlaDelivery</span></div></header>
+  <main class="container small"><section class="card"><h2>Sign in</h2>
+  <form id="loginForm"><div class="input-group"><label>Mobile number</label><input id="loginPhone" type="tel" placeholder="+91 98765 43210" required></div><button type="submit" class="btn-submit">Send OTP (demo)</button></form><div id="loginResult" class="muted"></div></section></main>
+  <script>document.getElementById('loginForm').addEventListener('submit',function(e){e.preventDefault();const ph=document.getElementById('loginPhone').value.trim();if(!ph){alert('Enter phone');return;}document.getElementById('loginResult').textContent='OTP sent (demo).';});</script>
+</body></html>

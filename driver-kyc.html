@@ -1,0 +1,8 @@
+
+<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Driver KYC - BlaVlaDelivery</title><link rel="stylesheet" href="assets/styles.css"></head><body>
+  <header class="topbar"><div class="brand"><img src="assets/images/logo_blue.jpg" alt="logo" style="height:30px"><span>BlaVlaDelivery</span></div></header>
+  <main class="container small"><section class="card"><h2>Driver KYC</h2>
+  <form id="driverKyc"><div class="input-group"><label>Full name</label><input id="d_name" type="text" required></div><div class="input-group"><label>Phone</label><input id="d_phone" type="tel" required></div><div class="input-group"><label>Vehicle length (cm)</label><input id="veh_l" type="number" min="0"></div><div class="input-group"><label>Vehicle width (cm)</label><input id="veh_w" type="number" min="0"></div><div class="input-group"><label>Vehicle height (cm)</label><input id="veh_h" type="number" min="0"></div><div class="input-group"><label>RC (image)</label><input id="d_rc" type="file" accept="image/*" required></div><div class="input-group"><label>Selfie</label><input id="d_selfie" type="file" accept="image/*" required></div><button type="submit" class="btn-submit">Submit Driver KYC</button></form>
+  <div id="driverResult" class="muted"></div></section></main>
+  <script>document.getElementById('driverKyc').addEventListener('submit',function(e){e.preventDefault();document.getElementById('driverResult').textContent='Driver KYC submitted (demo).';});</script>
+</body></html>
